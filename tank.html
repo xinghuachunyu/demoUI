@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    html,body{
+      height: 100%;
+      background: #000;
+      margin:0;
+      padding: 0;
+    }
+    #tank{
+      position: absolute;
+      left: 40%;
+      top:80%;
+    }
+  </style>
+</head>
+<body>
+  <img id="tank" src="image/p1tankU.gif" />
+  <input type="text" />
+  <script>
+    var tank = document.getElementById("tank");
+    document.onkeydown = function(ev){
+      var code = ev.keyCode;
+      console.log(code);
+      switch (code) {
+        case 37:
+          tank.src = "image/p1tankL.gif";
+          tank.style.left = tank.offsetLeft - 10 + "px";
+          break;
+        case 38:
+          tank.src = "image/p1tankU.gif";
+          tank.style.top = tank.offsetTop - 10 + "px";
+          break;
+        case 39:
+          tank.src = "image/p1tankR.gif";
+          tank.style.left = tank.offsetLeft + 10 + "px";
+          break;
+        case 40:
+          tank.src = "image/p1tankD.gif";
+          tank.style.top = tank.offsetTop + 10 + "px";
+          break;
+      }
+    }
+  </script>
+</body>
+</html>
